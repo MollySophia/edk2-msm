@@ -19,6 +19,7 @@
 [Defines]
   SOC_PLATFORM            = sm8150
   USE_PHYSICAL_TIMER      = TRUE
+  USE_QCOM_RESETLIB       = TRUE
 
 !include Silicon/Qualcomm/QcomPkg/QcomCommonDsc.inc
 
