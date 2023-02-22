@@ -155,6 +155,12 @@ APRIORI DXE {
     SECTION UI = "DDRInfoDxe"
   }
 
+  FILE DRIVER = 3ae17db7-3cc5-4b89-9304-9549211057ef {
+    SECTION DXE_DEPEX = Platform/EFI_Binaries/Drivers/sm8150/ResetRuntimeDxe/ResetRuntimeDxe.depex
+    SECTION PE32 = Platform/EFI_Binaries/Drivers/sm8150/ResetRuntimeDxe/ResetRuntimeDxe.efi
+    SECTION UI = "ResetRuntimeDxe"
+  }
+
   FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9 {
     SECTION DXE_DEPEX = Platform/EFI_Binaries/Drivers/sm8150/PmicDxe/PmicDxe.depex
     SECTION PE32 = Platform/EFI_Binaries/Drivers/sm8150/PmicDxe/PmicDxe.efi
