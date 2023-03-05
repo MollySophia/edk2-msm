@@ -1,0 +1,37 @@
+## @file
+#  Coreboot Table Parse Library.
+#
+#  Copyright (c) 2014 - 2021, Intel Corporation. All rights reserved.<BR>
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = CbParseLib
+  FILE_GUID                      = 49EDFC9E-5945-4386-9C0B-C9B60CD45BB1
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = BlParseLib
+
+[Sources]
+  CbParseLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  ArmPkg/ArmPkg.dec
+  Silicon/Qualcomm/QcomPkg/QcomPkg.dec
+  Silicon/Qualcomm/sc7180/sc7180.dec
+
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  IoLib
+  DebugLib
+  PcdLib
+
+[Pcd]
+  gsc7180PkgTokenSpaceGuid.PcdBootloaderParameter
+  # gsc7180PkgTokenSpaceGuid.PcdCbMemTopAddr

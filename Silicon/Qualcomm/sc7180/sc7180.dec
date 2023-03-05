@@ -1,0 +1,18 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x0001001A
+  PACKAGE_NAME                   = sc7180Pkg
+  PACKAGE_GUID                   = 8f169043-4634-42b9-adab-5040f633596c
+  PACKAGE_VERSION                = 1.0
+
+[Includes]
+  Include
+
+[Guids]
+  gsc7180PkgTokenSpaceGuid        = { 0x99a14446, 0xaad7, 0xe460, {0xb4, 0xe5, 0x1f, 0x79, 0xaa, 0xa4, 0x93, 0xfd } }
+
+[PcdsFixedAtBuild.common]
+  # gsc7180PkgTokenSpaceGuid.PcdCbMemTopAddr|0x100000000|UINT64|0x10000003
+
+[PcdsPatchableInModule.common]
+  ## Save bootloader parameter
+  gsc7180PkgTokenSpaceGuid.PcdBootloaderParameter|0|UINT64|0x10000004

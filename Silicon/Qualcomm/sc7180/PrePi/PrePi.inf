@@ -1,0 +1,80 @@
+#/** @file
+#  
+#  
+#  Copyright (c) DuoWoA authors. All rights reserved.
+#  Copyright (c) Renegade Project. All rights reserved.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#**/
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Sec
+  FILE_GUID                      = cb29597e-6530-42e7-b21f-5cebc170f1b3
+  MODULE_TYPE                    = SEC
+  VERSION_STRING                 = 1.0
+
+[Sources.common]
+  Pi.c
+
+[Sources.AARCH64]
+  ModuleEntryPoint.S | GCC
+
+[BuildOptions.AARCH64]
+  GCC:*_*_*_CC_FLAGS = -Werror -Wno-error=unused-function
+
+[Packages]
+  ArmPkg/ArmPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  Silicon/Qualcomm/QcomPkg/QcomPkg.dec
+  Silicon/Qualcomm/sc7180/sc7180.dec
+  SimpleInit.dec
+
+[LibraryClasses]
+  ArmLib
+  ArmMmuLib
+  BaseLib
+  CacheMaintenanceLib
+  DebugLib
+  ExtractGuidedSectionLib
+  HobLib
+  IoLib
+  LzmaDecompressLib
+  MemoryAllocationLib
+  MemoryInitPeiLib
+  PlatformPeiLib
+  PlatformPrePiLib
+  PrePiHobListPointerLib
+  PrePiLib
+  BlParseLib
+
+[Guids]
+  gEfiSystemNvDataFvGuid
+  gEfiVariableGuid
+  gEfiFirmwarePerformanceGuid
+  gEfiGraphicsInfoHobGuid
+
+[FeaturePcd]
+  gEmbeddedTokenSpaceGuid.PcdPrePiProduceMemoryTypeInformationHob
+
+[Pcd]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString
+  gsc7180PkgTokenSpaceGuid.PcdBootloaderParameter
+
+[FixedPcd]
+  gArmTokenSpaceGuid.PcdSystemMemoryBase
+  gArmTokenSpaceGuid.PcdSystemMemorySize
+  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress
+  gArmTokenSpaceGuid.PcdFdBaseAddress
+  gArmTokenSpaceGuid.PcdFdSize
+  gEmbeddedTokenSpaceGuid.PcdPrePiStackBase
+  gEmbeddedTokenSpaceGuid.PcdPrePiStackSize
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize
+  gQcomTokenSpaceGuid.PcdUefiMemPoolBase
+  gQcomTokenSpaceGuid.PcdUefiMemPoolSize
+  gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore
+  gQcomTokenSpaceGuid.PcdLinuxUtilsCheckHallOnly
+  
