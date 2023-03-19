@@ -30,7 +30,7 @@ Size          = $(FD_SIZE)|gArmTokenSpaceGuid.PcdFdSize
 ErasePolarity = 1
 
 # This one is tricky, it must be: BlockSize * NumBlocks = Size
-BlockSize     = 0x00001000
+BlockSize     = 0x00001200
 NumBlocks     = 0x100
 
 ################################################################################
@@ -128,7 +128,7 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 
 # BSP drivers
-# !include Platform/Qualcomm/sc7180/dxe.fdf.inc
+!include Platform/Qualcomm/sc7180/dxe.fdf.inc
 
   INF Silicon/Qualcomm/QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
